@@ -104,8 +104,11 @@ var CollapsableMixin = {
   },
 
   isExpanded: function () {
+    console.log("is expanded");
     return (this.props.expanded != null) ?
       this.props.expanded : this.state.expanded;
+    var node = this.getCollapsableDOMNode();
+    node.style['height'] = '';
   },
 
   getCollapsableClassSet: function (className) {
